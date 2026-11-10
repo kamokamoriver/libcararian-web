@@ -1,0 +1,66 @@
+[
+  {
+    "name": "merge_plain",
+    "kind": "merge",
+    "files": ["a4_score.pdf", "rotated.pdf", "b5_small.pdf", "rotated180.pdf"],
+    "options": { "booklet": false, "centerGapMm": 20, "numbering": false, "startNumber": 1, "coverPages": 0 }
+  },
+  {
+    "name": "merge_numbered",
+    "kind": "merge",
+    "files": ["a4_score.pdf", "rotated.pdf", "b5_small.pdf"],
+    "options": { "booklet": false, "centerGapMm": 20, "numbering": true, "startNumber": 3, "coverPages": 1 }
+  },
+  {
+    "name": "booklet_gap20_numbered",
+    "kind": "merge",
+    "files": ["a4_score.pdf", "rotated.pdf", "b5_small.pdf"],
+    "options": { "booklet": true, "centerGapMm": 20, "numbering": true, "startNumber": 1, "coverPages": 2 },
+    "expectDiff": {
+      "pages": [0],
+      "reason": "3章No.3の修正: 小冊子の調整で足した白紙（12ページ目）に番号「10」を印刷しない"
+    }
+  },
+  {
+    "name": "booklet_gap0",
+    "kind": "merge",
+    "files": ["a4_score.pdf", "b5_small.pdf"],
+    "options": { "booklet": true, "centerGapMm": 0, "numbering": false, "startNumber": 1, "coverPages": 0 }
+  },
+  {
+    "name": "songs",
+    "kind": "songs",
+    "files": ["a4_score.pdf", "rotated.pdf", "b5_small.pdf"],
+    "options": {
+      "prefix": "混声",
+      "initialPage": 3,
+      "songs": [
+        { "number": 1, "name": "はじまりの歌", "start": 3, "end": 5 },
+        { "number": 12, "name": "回転", "start": 9, "end": 10 },
+        { "number": 3, "name": "はみ出し", "start": 12, "end": 20 }
+      ]
+    }
+  },
+  {
+    "name": "split_b5",
+    "kind": "split",
+    "files": ["rotated.pdf", "b5_small.pdf"],
+    "options": { "prefix": "2025混声", "convertToB5": true }
+  },
+  {
+    "name": "split_raw",
+    "kind": "split",
+    "files": ["rotated.pdf", "b5_small.pdf"],
+    "options": { "prefix": "page_", "convertToB5": false }
+  },
+  {
+    "name": "offset_box",
+    "kind": "merge",
+    "files": ["offset_box.pdf"],
+    "options": { "booklet": false, "centerGapMm": 20, "numbering": false, "startNumber": 1, "coverPages": 0 },
+    "expectDiff": {
+      "pages": [0],
+      "reason": "3章No.11の修正: ページ枠の原点が(0,0)でないPDFでも内容がずれない"
+    }
+  }
+]

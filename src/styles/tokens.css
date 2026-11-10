@@ -1,0 +1,73 @@
+/* 自動生成: scripts/build-tokens.mjs（元: design-system/tokens.json）。直接編集しない */
+:root {
+  --font-sans: "Hiragino Sans", "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+  --text-body: 400 14px/1.6 var(--font-sans);
+  --text-label: 600 14px/1.6 var(--font-sans);
+  --text-caption: 400 12px/1.6 var(--font-sans);
+  --text-section-title: 600 15px/1.6 var(--font-sans);
+  --text-page-title: 700 22px/1.4 var(--font-sans);
+  --text-summary-title: 700 18px/1.4 var(--font-sans);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --sheet-shadow: 0 1px 3px rgba(20, 30, 50, .18);
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --text: #1d2330;
+  --muted: #5d6677;
+  --border: #d9dde4;
+  --accent: #2557c7;
+  --accent-text: #ffffff;
+  --accent-soft: #e7eefc;
+  --warn-bg: #fff6e0;
+  --warn-text: #7a5300;
+  --error-bg: #fdecec;
+  --error-text: #9b1c1c;
+  --sheet: #ffffff;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15181e;
+    --surface: #1e222a;
+    --surface-2: #262b35;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --border: #343a46;
+    --accent: #6f9bff;
+    --accent-text: #0d1220;
+    --accent-soft: #24304a;
+    --warn-bg: #3a2f14;
+    --warn-text: #f3d48a;
+    --error-bg: #3d1d1d;
+    --error-text: #ffb3b3;
+    --sheet: #ffffff;
+    --sheet-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15181e;
+  --surface: #1e222a;
+  --surface-2: #262b35;
+  --text: #e6e9ef;
+  --muted: #9aa3b2;
+  --border: #343a46;
+  --accent: #6f9bff;
+  --accent-text: #0d1220;
+  --accent-soft: #24304a;
+  --warn-bg: #3a2f14;
+  --warn-text: #f3d48a;
+  --error-bg: #3d1d1d;
+  --error-text: #ffb3b3;
+  --sheet: #ffffff;
+  --sheet-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  color-scheme: dark;
+}
