@@ -15,7 +15,7 @@ test('PDFを追加し、白紙を入れて小冊子を確認・ダウンロー�
   page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
   page.on('pageerror', (e) => errors.push(e.message));
 
-  await page.goto('/');
+  await page.goto('./');
   await expect(page.getByText('PDFをここにドロップ')).toBeVisible();
   await page.screenshot({ path: shots('01-empty.png') });
 
@@ -49,7 +49,7 @@ test('PDFを追加し、白紙を入れて小冊子を確認・ダウンロー�
 });
 
 test('曲ごと分割は入力ミスを実行前に示し、直すとZIPを出力する', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   await addFixtures(page);
   await page.getByRole('tab', { name: '曲ごと' }).click();
 
@@ -76,7 +76,7 @@ test('曲ごと分割は入力ミスを実行前に示し、直すとZIPを出�
 });
 
 test('ページを回転すると、サムネイルと出力に反映される', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   await addFixtures(page);
   // rotated.pdf の1ページ目（通しページ7）は横長に見える
   const thumb = page.getByAltText('通しページ 7');
@@ -102,7 +102,7 @@ test('ページを回転すると、サムネイルと出力に反映される',
 
 test('ダークテーマと狭い画面でも崩れない', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'dark' });
-  await page.goto('/');
+  await page.goto('./');
   await addFixtures(page);
   await page.screenshot({ path: shots('05-dark.png') });
   await page.setViewportSize({ width: 390, height: 844 });

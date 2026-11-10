@@ -1,7 +1,7 @@
 # PLAN: Libcararian Web
 
 最終更新: 2026-11-10
-**現在地:** MVP（S0〜S7）を実装した。残りは、GitHub への公開（リポジトリを作り push する）と、本番 URL でコアループを1周確かめること。どちらもユーザーの判断待ち。
+**現在地:** MVP と US-9（回転）を実装し、公開した（https://kamokamoriver.github.io/libcararian-web/ 、リポジトリ kamokamoriver/libcararian-web）。次は、実際の楽譜PDFでの確認と、Should の機能。
 
 > 2026-11-10 ユーザーから「以降、自律的に実装して」と指示を受けた。そのため、DESIGN と PLAN の承認ゲートは省き、DESIGN の「仮定」をそのまま採用して進めた。
 
@@ -57,7 +57,15 @@
   - 実在の楽譜PDF（スキャンした大きなファイル）での操作。
   - GitHub Pages 上での動作。
 
+- 2026-11-10: GitHub に公開した。
+  - リポジトリ `kamokamoriver/libcararian-web` を public で作った。Pages は GitHub Actions で公開する。
+  - 公開中のURLを相手に E2E 4件を流し、すべて通った（CSP 入りの本番ビルドで、コアループを1周確認した）。
+
 ## 技術的負債・TODO
+
+- **GitHub Actions の警告:**
+  - `actions/checkout@v4` などが Node 20 向けのため、非推奨の警告が出ている（動作はする）。
+  - 新しいメジャーバージョンが出たら上げる。
 
 - **性能:**
   - 300ページの小冊子に、約9.5秒かかる（`compat/perf.ts`。Node での計測）。

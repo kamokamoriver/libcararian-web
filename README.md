@@ -1,7 +1,9 @@
 # Libcararian Web
 
 楽譜PDFを結合して小冊子（B4見開き・中綴じ）にしたり、曲ごと・ページごとのPDFに分けたりするWebアプリです。
-PDFはブラウザの中だけで処理し、外部には送りません。デスクトップ版 Libcararian（Python）をWebに移したもので、印刷結果は現行版と同じです。
+PDFはブラウザの中だけで処理し、外部には送りません。
+
+公開URL: https://kamokamoriver.github.io/libcararian-web/ （`main` に push すると自動で公開されます）デスクトップ版 Libcararian（Python）をWebに移したもので、印刷結果は現行版と同じです。
 
 ## 動かし方
 
@@ -10,6 +12,7 @@ npm install
 npm run dev        # http://localhost:5173
 npm run check      # 型チェック・リント・単体テスト
 npm run test:e2e   # 画面操作テスト（インストール済みの Chrome を使う）
+E2E_BASE_URL=https://kamokamoriver.github.io/libcararian-web/ npm run test:e2e   # 公開中のサイトを相手に
 npm run compat     # 現行版（Python）の出力と画像で比べる。Python と pymupdf・numpy が必要
 npm run build      # dist/ に静的サイトを出力
 ```
